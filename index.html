@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小笠原このみ ｜ ポートフォリオ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --base:#F2F3F6;
+  --card:#FFFFFF;
+  --peach:#FFEAE3;
+  --dusty:#9DB0C8;
+  --navy:#34507A;
+  --deep:#1F2C49;
+  --ink:#22242E;
+  --body:#363A42;
+  --muted:#8E94A0;
+  --line:#E4E6EB;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Noto Sans JP",sans-serif;
+  font-weight:300;
+  color:var(--body);
+  background:var(--base);
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+.serif{font-family:"Noto Serif JP",serif;}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+
+/* labels */
+.label{
+  font-family:"Noto Sans JP",sans-serif;
+  font-size:11px;font-weight:500;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);display:block;margin-bottom:14px;
+}
+
+/* hero */
+.hero{
+  background:var(--card);
+  border-bottom:1px solid var(--line);
+  padding:110px 0 90px;
+  position:relative;overflow:hidden;
+}
+.hero .circle{
+  position:absolute;border-radius:50%;
+  background:var(--peach);opacity:.55;
+  width:340px;height:340px;right:-90px;top:-110px;z-index:0;
+}
+.hero .circle.b{
+  background:var(--dusty);opacity:.18;
+  width:180px;height:180px;left:-60px;bottom:-70px;
+}
+.hero .inner{position:relative;z-index:1;}
+.hero h1{
+  font-family:"Noto Serif JP",serif;font-weight:900;
+  color:var(--ink);font-size:54px;line-height:1.3;
+  letter-spacing:.04em;margin-bottom:22px;
+}
+.hero h1 small{display:block;font-size:17px;font-weight:500;color:var(--navy);letter-spacing:.1em;margin-top:18px;}
+.hero p.lead{font-size:16px;max-width:620px;color:var(--body);}
+.hero p.lead b{color:var(--navy);font-weight:500;}
+
+/* nav */
+nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{display:flex;gap:28px;align-items:center;height:56px;flex-wrap:wrap;}
+nav a{
+  font-size:12px;letter-spacing:.1em;font-weight:500;
+  color:var(--body);text-decoration:none;transition:color .2s;
+}
+nav a:hover{color:var(--navy);}
+nav .brand{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--ink);margin-right:auto;font-size:15px;letter-spacing:.06em;}
+
+/* sections */
+section{padding:80px 0;}
+.sec-head{margin-bottom:48px;}
+.sec-head h2{
+  font-family:"Noto Serif JP",serif;font-weight:700;
+  color:var(--ink);font-size:30px;letter-spacing:.05em;
+}
+.scallop{
+  height:8px;width:90px;margin-top:16px;
+  background-image:radial-gradient(circle at 5px 8px, transparent 5px, var(--dusty) 5px, var(--dusty) 6px, transparent 6px);
+  background-size:10px 8px;background-repeat:repeat-x;opacity:.5;
+}
+
+/* profile */
+.profile-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+.profile-grid .intro p{margin-bottom:18px;font-size:15px;}
+.profile-grid .intro p b{color:var(--navy);font-weight:500;}
+.infocard{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:4px;padding:34px 32px;
+}
+.infocard h3{
+  font-family:"Noto Serif JP",serif;font-weight:500;
+  color:var(--ink);font-size:17px;margin:26px 0 12px;letter-spacing:.04em;
+}
+.infocard h3:first-child{margin-top:0;}
+.infocard .row{display:flex;font-size:14px;padding:5px 0;border-bottom:1px solid var(--line);}
+.infocard .row span:first-child{width:88px;color:var(--muted);font-weight:400;}
+.infocard .sns a{color:var(--navy);text-decoration:none;font-weight:500;}
+.infocard .sns p{font-size:13.5px;margin:9px 0;}
+.infocard .sns .fw{color:var(--muted);font-size:12px;}
+
+/* experience timeline */
+.timeline{position:relative;padding-left:30px;}
+.timeline::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:var(--line);}
+.tl-item{position:relative;margin-bottom:34px;}
+.tl-item::before{
+  content:"";position:absolute;left:-30px;top:7px;
+  width:9px;height:9px;border-radius:50%;background:var(--navy);
+  box-shadow:0 0 0 4px var(--base);
+}
+.tl-item .date{font-size:12px;color:var(--muted);letter-spacing:.08em;font-weight:500;}
+.tl-item h4{font-family:"Noto Serif JP",serif;font-weight:500;color:var(--ink);font-size:16.5px;margin:4px 0 8px;letter-spacing:.03em;}
+.tl-item p{font-size:14px;color:var(--body);}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:8px;}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:30px 24px;text-align:center;}
+.stat .num{font-family:"Noto Serif JP",serif;font-weight:900;color:var(--deep);font-size:42px;line-height:1;letter-spacing:.02em;}
+.stat .num small{font-size:18px;font-weight:700;}
+.stat .cap{font-size:12.5px;color:var(--muted);margin-top:12px;letter-spacing:.04em;}
+
+/* services */
+.services{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:36px 34px;}
+.svc .num-label{font-size:11px;letter-spacing:.16em;color:var(--dusty);font-weight:700;}
+.svc h3{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--ink);font-size:21px;margin:10px 0 18px;letter-spacing:.04em;}
+.svc .phase{font-size:12.5px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin:18px 0 10px;}
+.svc ul{list-style:none;}
+.svc ul li{font-size:13.5px;padding:5px 0 5px 18px;position:relative;color:var(--body);}
+.svc ul li::before{content:"";position:absolute;left:0;top:13px;width:5px;height:1px;background:var(--navy);}
+.callout{background:var(--peach);border-radius:4px;padding:20px 22px;margin-top:24px;font-size:13.5px;color:var(--body);line-height:1.85;}
+
+/* industries */
+.tags{display:flex;flex-wrap:wrap;gap:9px;}
+.tags span{background:var(--card);border:1px solid var(--line);border-radius:40px;padding:7px 16px;font-size:12.5px;color:var(--body);}
+
+/* contact / footer */
+.contact{background:var(--card);border-top:1px solid var(--line);padding:90px 0;text-align:center;}
+.contact .label{margin-bottom:18px;}
+.contact h2{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--ink);font-size:30px;margin-bottom:22px;letter-spacing:.05em;}
+.contact p{font-size:15px;max-width:560px;margin:0 auto 30px;}
+.contact a.btn{
+  display:inline-block;background:var(--deep);color:#fff;text-decoration:none;
+  font-size:14px;font-weight:500;letter-spacing:.08em;
+  padding:15px 40px;border-radius:3px;transition:background .2s;
+}
+.contact a.btn:hover{background:var(--navy);}
+footer{padding:34px 0;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.06em;background:var(--base);}
+
+@media(max-width:760px){
+  .hero h1{font-size:38px;}
+  .profile-grid,.services{grid-template-columns:1fr;}
+  .stats{grid-template-columns:1fr;}
+  section{padding:58px 0;}
+  nav .wrap{gap:18px;height:auto;padding-top:10px;padding-bottom:10px;}
+  nav .brand{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">ogaco.life</span>
+    <a href="#profile">PROFILE</a>
+    <a href="#works">WORKS</a>
+    <a href="#career">CAREER</a>
+    <a href="#services">SERVICES</a>
+    <a href="#contact">CONTACT</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <span class="circle"></span>
+  <span class="circle b"></span>
+  <div class="wrap inner">
+    <span class="label">MEO &amp; SNS Marketing Portfolio</span>
+    <h1>小笠原このみ<small>KONOMI OGASAWARA — MEO / SNS ディレクター</small></h1>
+    <p class="lead">これまで<b>累計30店舗以上</b>のビジネスをMEO運用でサポート。データに基づいた戦略と、店舗様の個性を活かした施策で課題を解決します。</p>
+  </div>
+</header>
+
+<section id="profile">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">About</span>
+      <h2>自己紹介</h2>
+      <div class="scallop"></div>
+    </div>
+    <div class="profile-grid">
+      <div class="intro">
+        <p>プロフィールページをご覧いただきありがとうございます。私はこれまで<b>MEO運用を中心に累計30店舗以上</b>のビジネスをサポートしてまいりました。</p>
+        <p>お客様のお悩みに寄り添い、「データに基づいた戦略と、店舗様の個性を活かした施策」で課題を解決していきます。歯科医院や美容院、飲食店、ジムなど、様々な業種の経験がございます。</p>
+        <p>MEO運用やSNS運用がはじめての方でもご安心ください。丁寧にヒアリングしながら、店舗様に合わせて<b>ご提案いたします</b>。</p>
+      </div>
+      <div class="infocard">
+        <h3>基本情報</h3>
+        <div class="row"><span>名前</span><span>小笠原このみ</span></div>
+        <div class="row"><span>出身</span><span>長野県</span></div>
+        <div class="row"><span>年齢</span><span>30歳</span></div>
+        <div class="row"><span>連絡先</span><span>ogaco2525@gmail.com</span></div>
+
+        <h3>稼働時間</h3>
+        <p style="font-size:13.5px;">平日 9:00〜15:00 ／ 土日祝は早朝対応可。<br>5歳と3歳の子供がおり、平日の登園中と早朝に業務にあたります。曜日問わず24時間以内の返信を心がけております。</p>
+
+        <h3>各種SNS</h3>
+        <div class="sns">
+          <p><a href="https://www.instagram.com/ogaco.life/" target="_blank" rel="noopener">Instagram @ogaco.life</a><br>シンプルライフの日常を発信中 <span class="fw">FW 1.5万人</span></p>
+          <p><a href="https://www.tiktok.com/@ogaco.life" target="_blank" rel="noopener">TikTok @ogaco.life</a><br>ゆるミニマルな暮らしの動画 <span class="fw">FW 1.2万人</span></p>
+          <p><a href="https://www.youtube.com/@ogaco.2525life/featured" target="_blank" rel="noopener">YouTube おがこ⌇シンプルライフ</a><br>1LDK4人暮らしの様子を配信 <span class="fw">FW 2,000人</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="works" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Track Record</span>
+      <h2>MEO運用 ― 過去の実績</h2>
+      <div class="scallop"></div>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="num">30<small>店舗+</small></div><div class="cap">累計支援店舗数</div></div>
+      <div class="stat"><div class="num">80<small>%</small></div><div class="cap">指導生徒の案件受注率</div></div>
+      <div class="stat"><div class="num">10<small>名+</small></div><div class="cap">MEO指導実績</div></div>
+    </div>
+    <p style="margin:42px 0 16px;font-size:13px;color:var(--muted);letter-spacing:.08em;">運用経験のある業種</p>
+    <div class="tags">
+      <span>歯科医院</span><span>カラオケバー</span><span>和食店</span><span>寿司店</span><span>カフェ</span><span>バー</span><span>アイラッシュサロン</span><span>美容院</span><span>清掃業</span><span>レンタルスペース</span><span>女性専用ジム</span><span>シーシャ</span><span>ドーナツ店</span><span>etc…</span>
+    </div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Career</span>
+      <h2>経歴</h2>
+      <div class="scallop"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="date">2014.03</div>
+        <h4>長姫高校 建築学科 卒業</h4>
+        <p>建築学科で設計理論や構造力学などの専門知識を学びました。</p>
+      </div>
+      <div class="tl-item">
+        <div class="date">2014.04 — 2016.03</div>
+        <h4>地元工務店 ／ 住宅営業</h4>
+        <p>JW CADを用いた間取りプラン作成、顧客との打ち合わせ、飛び込み営業による土地開拓などを担当。</p>
+      </div>
+      <div class="tl-item">
+        <div class="date">2016.04 — 2018.04</div>
+        <h4>トヨタホーム ／ 営業事務</h4>
+        <p>営業担当をサポートし、顧客向けDM作成や専用ツールを活用したパース図作成を担当。業務効率化と提案力向上に貢献。</p>
+      </div>
+      <div class="tl-item">
+        <div class="date">2018.04 — 2021.10</div>
+        <h4>住宅相談所 すまいポート21 ／ 営業</h4>
+        <p>工務店とお客様の日程調整、土地探し、お客様に合った工務店選びを担当。丁寧なヒアリングを通じて顧客ニーズを的確に把握し、最適な提案を実現。</p>
+      </div>
+      <div class="tl-item">
+        <div class="date">2022.11 — 現在</div>
+        <h4>Instagram発信を開始 ／ 半年で1万人達成</h4>
+        <p>毎日投稿を継続し、半年で1万人を達成。困難な目標でも最後まで諦めずやり抜く強い意志と実行力があります。</p>
+      </div>
+      <div class="tl-item">
+        <div class="date">2024.10 — 現在</div>
+        <h4>MEO運用ディレクション担当（社名非公開）</h4>
+        <p>累計30店舗以上を支援。ソフトスキルの高さを評価いただき、重要顧客を任されるまでになりました。</p>
+      </div>
+      <div class="tl-item">
+        <div class="date">2025.05 — 現在</div>
+        <h4>オンラインスクール ／ MEO知識指導担当（社名非公開）</h4>
+        <p>累計10名以上の生徒を指導し、案件受注率80%という高い成果を実現。丁寧な指導と実践的なサポートで生徒の確実なスキル習得と案件獲得を支援。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--card);border-top:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="label">Services</span>
+      <h2>対応可能業務</h2>
+      <div class="scallop"></div>
+    </div>
+    <div class="services">
+      <div class="svc">
+        <div class="num-label">SERVICE 01</div>
+        <h3>MEO運用</h3>
+        <p style="font-size:14px;">初期設計〜定期運用まで一気通貫して承ります。</p>
+        <div class="phase">初期設計</div>
+        <ul>
+          <li>オーナー確認サポート</li>
+          <li>Googleビジネスプロフィール立ち上げ</li>
+          <li>競合店舗のリサーチ</li>
+          <li>店舗様にぴったりな対策KWの選定</li>
+          <li>対策KWを含んだ店舗説明文の作成</li>
+          <li>インバウンド対策（英文・韓国語を含む対策）</li>
+          <li>NAP情報の整理・修正</li>
+          <li>メニュー・サービス欄の登録</li>
+        </ul>
+        <div class="phase">通常運用</div>
+        <ul>
+          <li>対策KWを含んだ投稿作成代行（月6回）</li>
+          <li>対策KWを含んだ口コミの返信（週2回）</li>
+        </ul>
+        <div class="callout">店舗様の魅力を最大限に引き出し、地域のお客様に確実に届けることを第一に。データに基づいた戦略的アプローチと、個性を活かした施策で持続的な集客力向上を実現します。</div>
+      </div>
+      <div class="svc">
+        <div class="num-label">SERVICE 02</div>
+        <h3>Instagram 初期設計</h3>
+        <p style="font-size:14px;">発信の軸となる土台づくりをサポートします。</p>
+        <div class="phase">初期設計</div>
+        <ul>
+          <li>初回ヒアリング（1h）</li>
+          <li>ターゲット顧客のペルソナ設計</li>
+          <li>ハイライトカテゴリ設定・カバー作成</li>
+          <li>店舗様にぴったりなトーン&amp;マナーのご提案</li>
+          <li>プロフィール文の作成・最適化</li>
+          <li>初期投稿9件の企画・作成</li>
+        </ul>
+        <div class="callout">アカウントの見た目を整え、ターゲット顧客に響くブランドイメージを構築。プロフィール設計から統一感のある投稿デザインまで、集客につながる土台作りをサポートします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="label">Contact</span>
+    <h2>お気軽にご相談ください</h2>
+    <p>MEO運用・SNS運用がはじめての方も大歓迎です。まずは丁寧にヒアリングし、店舗様に合わせてご提案いたします。</p>
+    <a class="btn" href="mailto:ogaco2525@gmail.com">メールでお問い合わせ</a>
+  </div>
+</section>
+
+<footer>© 2026 Konomi Ogasawara ｜ ogaco.life</footer>
+
+</body>
+</html>
